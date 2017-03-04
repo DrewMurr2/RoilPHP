@@ -10,7 +10,7 @@ if( $conn ) {
      die( print_r( sqlsrv_errors(), true));
 };
 
-
+$sql = "Select * From Users;";
 $stmt = sqlsrv_query( $conn, $sql);
 if( $stmt === false ) {
      echo "no $stmt<br />";
