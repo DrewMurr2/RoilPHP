@@ -2,7 +2,7 @@
 $serverName = "roilfirstsqlserver.database.windows.net"; //serverName\instanceName, portNumber (default is 1433)
 $connectionInfo = array( "Database"=>"RoilOperations", "UID"=>"roilservices", "PWD"=>"Roil111111");
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
-
+echo "b";
 if( $conn ) {
      echo "Connection established.<br />";
 }else{
@@ -18,10 +18,13 @@ if( $stmt === false ) {
 }else{
      echo "In here<br />";
     while( $obj = sqlsrv_fetch_object( $stmt)) {
-        $json = json_encode($obj);
-      echo $json."<br />";
+      foreach ($obj as $item) {
+                  $json = json_encode($item);
+      echo $json."<br />"; 
+      }
+
 }
 };
-echo "a";
+
 
 ?>
