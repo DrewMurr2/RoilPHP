@@ -20,5 +20,7 @@ if( $stmt === false ) {
      echo "In here<br />";
      $json = json_encode($stmt);
  echo $json;
-}
+};
+echo "just because";
+
 ?>
