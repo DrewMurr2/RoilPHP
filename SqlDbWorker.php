@@ -13,12 +13,12 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="#"></a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="#"></a></li>
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Current Roil Tables
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
 
@@ -34,18 +34,37 @@ if( $stmt === false ) {
      echo "<li><a>Nope</a></li>";
 }else{
     while($obj = sqlsrv_fetch_object( $stmt)){
-    $json = json_encode($obj);
-      echo "<li><a>".$json."</a></li>";
+    //$json = json_encode($obj);
+      echo "<li><a>".$obj."</a></li>";
     }
 };
 
 
 ?>
 
+
+<script>
+function getTable(table) {
+    if (str.length == 0) { 
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "gethint.php?q=" + str, true);
+        xmlhttp.send();
+    }
+}
+</script>
+
+
+
         </ul>
       </li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
     </ul>
   </div>
 </nav>
