@@ -43,6 +43,7 @@ if( $stmt === false ) {
 ?>
 
 
+
 <script>
 function getTable(table) {
     if (str.length == 0) { 
