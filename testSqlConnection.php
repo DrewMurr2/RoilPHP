@@ -22,6 +22,6 @@ if( $stmt === false ) {
       echo $json."<br />";
 }
 };
-echo "now";
+echo "a";
 
 ?>
