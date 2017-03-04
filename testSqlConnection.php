@@ -9,4 +9,13 @@ if( $conn ) {
      echo "Connection could not be established.<br />";
      die( print_r( sqlsrv_errors(), true));
 }
+$sql = "Select * from Users";
+$params = array(1, "some data");
+
+$stmt = sqlsrv_query( $conn, $sql, $params);
+if( $stmt === false ) {
+     die( print_r( sqlsrv_errors(), true));
+}else{
+ echo $stmt;
+}
 ?>
