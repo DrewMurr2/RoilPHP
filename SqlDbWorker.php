@@ -21,9 +21,27 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
+
+<?php
+$serverName = "roilfirstsqlserver.database.windows.net"; //serverName\instanceName, portNumber (default is 1433)
+$connectionInfo = array( "Database"=>"RoilOperations", "UID"=>"roilservices", "PWD"=>"Roil111111");
+$conn = sqlsrv_connect( $serverName, $connectionInfo);
+
+$sql = "SELECT TABLE_NAME
+FROM INFORMATION_SCHEMA.TABLES;";
+$stmt = sqlsrv_query( $conn, $sql);
+if( $stmt === false ) {
+     echo "<li><a>Nope</a></li>";
+}else{
+    while($obj = sqlsrv_fetch_object( $stmt)){
+    $json = json_encode($obj);
+      echo "<li><a>".$json."</a></li>";
+    }
+};
+
+
+?>
+
         </ul>
       </li>
       <li><a href="#">Page 2</a></li>
