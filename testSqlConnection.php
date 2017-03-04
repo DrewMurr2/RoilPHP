@@ -9,32 +9,18 @@ if( $conn ) {
      echo "Connection could not be established.<br />";
      die( print_r( sqlsrv_errors(), true));
 };
-$sql = "Select * from Users";
-$params = array();
 
-$stmt = sqlsrv_query( $conn, $sql, $params);
+
+$stmt = sqlsrv_query( $conn, $sql);
 if( $stmt === false ) {
      echo "no $stmt<br />";
      die( print_r( sqlsrv_errors(), true));
 }else{
      echo "In here<br />";
-     $json = json_encode($stmt);
- echo $json;
+    while( $obj = sqlsrv_fetch_object( $stmt)) {
+      echo $obj->fName.", ".$obj->lName."<br />";
+}
 };
 echo "now";
-
-
-function getFruit($conn) {
-    $sql = "Select * from Users";
-    foreach ($conn->query($sql) as $row) {
-        foreach ($row as $item) {
-            print $item . "\t";
-        }
-    }
-};
-
-getFruit($conn);
-
-echo "this";
 
 ?>
