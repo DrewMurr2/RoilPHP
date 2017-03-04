@@ -14,8 +14,10 @@ $params = array(1, "some data");
 
 $stmt = sqlsrv_query( $conn, $sql, $params);
 if( $stmt === false ) {
+     echo "no $stmt<br />";
      die( print_r( sqlsrv_errors(), true));
 }else{
+     echo "In here<br />";
      $json = json_encode($stmt);
  echo $json;
 }
