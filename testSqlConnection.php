@@ -31,8 +31,10 @@ function getFruit($conn) {
             print $item . "\t";
         }
     }
-}
+};
 
+getFruit($conn);
 
+echo "this";
 
 ?>
