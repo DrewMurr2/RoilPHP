@@ -21,6 +21,6 @@ if( $stmt === false ) {
      $json = json_encode($stmt);
  echo $json;
 };
-echo "just because";
+echo "now";
 
 ?>
