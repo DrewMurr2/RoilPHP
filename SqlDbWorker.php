@@ -43,7 +43,7 @@ if( $stmt === false ) {
 ?>
 
 
-
+<!--
 <script>
 function getTable(table) {
     if (str.length == 0) { 
@@ -60,7 +60,7 @@ function getTable(table) {
         xmlhttp.send();
     }
 }
-</script>
+</script>-->
 
 
 
