@@ -24,4 +24,15 @@ if( $stmt === false ) {
 echo "now";
 
 
+function getFruit($conn) {
+    $sql = "Select * from Users";
+    foreach ($conn->query($sql) as $row) {
+        foreach ($row as $item) {
+            print $item . "\t";
+        }
+    }
+}
+
+
+
 ?>
