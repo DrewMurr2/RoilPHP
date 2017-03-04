@@ -18,7 +18,8 @@ if( $stmt === false ) {
 }else{
      echo "In here<br />";
     while( $obj = sqlsrv_fetch_object( $stmt)) {
-      echo $obj->fName.", ".$obj->lName."<br />";
+        $json = json_encode($obj);
+      echo $json."<br />";
 }
 };
 echo "now";
