@@ -35,7 +35,9 @@ if( $stmt === false ) {
 }else{
     while($obj = sqlsrv_fetch_object( $stmt)){
 // $json = json_encode($obj);
-      echo "<li><a>", $obj[0], "</a></li>";
+      echo "<li><a>";
+      echo $obj[0];
+      echo "</a></li>";
     }
 };
 
