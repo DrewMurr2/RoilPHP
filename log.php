@@ -35,8 +35,13 @@ if( $stmt === false ) {
      echo "<li><a>Nope</a></li>";
 }else{
     while($obj = sqlsrv_fetch_object( $stmt)){
-$json = json_encode($obj[$column]);
-echo $json;
+//$json = json_encode($obj);
+//echo $json;
+
+foreach ($obj as $name => $value) {
+      echo "$name: $value\n";
+  }
+
      // echo "<li><a>";
      // echo $obj->TABLE_NAME;
      // echo "</a></li>";
