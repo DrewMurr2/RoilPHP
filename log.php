@@ -34,17 +34,20 @@ $stmt = sqlsrv_query( $conn, $sql);
 if( $stmt === false ) {
      echo "<li><a>Nope</a></li>";
 }else{
+    echo "{data:[";
+    $firstTime = true;
     while($obj = sqlsrv_fetch_object( $stmt)){
 //$json = json_encode($obj);
 //echo $json;
-$firstTime = true;
-echo "{data:[";
+
+
 foreach ($obj as $name => $value) {
       if($firstTime){
 echo $value;
       }else{
   echo ", $value";
-      }
+  $firstTime = false;
+      };
     
   };
 echo "]}";
