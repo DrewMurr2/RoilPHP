@@ -28,10 +28,8 @@ if($direction == 'd'){
 $serverName = "roilfirstsqlserver.database.windows.net"; //serverName\instanceName, portNumber (default is 1433)
 $connectionInfo = array( "Database"=>"RoilOperations", "UID"=>"roilservices", "PWD"=>"Roil111111");
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
-
-
-
 $stmt = sqlsrv_query( $conn, $sql);
+echo $sql;
 if( $stmt === false ) {
      echo "<li><a>Nope</a></li>";
 }else{
