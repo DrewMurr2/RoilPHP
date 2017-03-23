@@ -1,0 +1,11 @@
+http://roilphp.azurewebsites.net/log.php?t=Example_Well_1_json&c=w5min&tt=1483167300000&o=1&d=d
+
+
+SELECT TOP 1 w5min FROM Example_Well_1_json Where w5min is not null and w5minT > 1483167300000 Order by w5minT Asc;
+
+Select count(*) from Example_Well_1_json
+Where w3hoursT is not null;
+
+SELECT *
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = N'Example_Well_1_json';
