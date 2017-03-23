@@ -41,7 +41,7 @@ if( $stmt === false ) {
      // echo "<li><a>";
      // echo $obj->TABLE_NAME;
      // echo "</a></li>";
-    }
+    //}
 };
 
 ?>
