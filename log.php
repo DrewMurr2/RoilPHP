@@ -37,11 +37,11 @@ if( $stmt === false ) {
     while($obj = sqlsrv_fetch_object( $stmt)){
 //$json = json_encode($obj);
 //echo $json;
-
+echo "{data:[";
 foreach ($obj as $name => $value) {
-      echo "$name: $value\n";
-  }
-
+      echo "$value , ";
+  };
+echo "]}";
      // echo "<li><a>";
      // echo $obj->TABLE_NAME;
      // echo "</a></li>";
