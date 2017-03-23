@@ -22,7 +22,7 @@ if($direction == 'd'){
     if($direction == 'z'){
   $sql = "Select * from ((" . $base . $asc . ") UNION (" . $base . $column . "T <= " . $time . " Order by " . $column . "T Desc));";
     }
-echo 'Test 5';
+echo 'Test 6';
 // echo $sql;
 
 
@@ -35,7 +35,7 @@ if( $stmt === false ) {
      echo "<li><a>Nope</a></li>";
 }else{
     while($obj = sqlsrv_fetch_object( $stmt)){
-$json = json_encode($obj[0]);
+$json = json_encode($obj[$column]);
 echo $json;
      // echo "<li><a>";
      // echo $obj->TABLE_NAME;
