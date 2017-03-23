@@ -22,8 +22,8 @@ if($direction == 'd'){
     if($direction == 'z'){
   $sql = "Select * from ((" . $base . $asc . ") UNION (" . $base . $column . "T <= " . $time . " Order by " . $column . "T Desc));";
     }
-echo 'Test 4';
-echo $sql;
+echo 'Test 5';
+// echo $sql;
 
 
 $serverName = "roilfirstsqlserver.database.windows.net"; //serverName\instanceName, portNumber (default is 1433)
@@ -35,7 +35,7 @@ if( $stmt === false ) {
      echo "<li><a>Nope</a></li>";
 }else{
     while($obj = sqlsrv_fetch_object( $stmt)){
-$json = json_encode($obj);
+$json = json_encode($obj[0]);
 echo $json;
      // echo "<li><a>";
      // echo $obj->TABLE_NAME;
