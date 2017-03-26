@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 $table = $_REQUEST["t"];
 $column = $_REQUEST["c"];
 $time = $_REQUEST["tt"];
