@@ -23,7 +23,6 @@ if($direction == 'd'){
     if($direction == 'z'){
   $sql = "Select * from ((" . $base . $asc . ") UNION (" . $base . $column . "T <= " . $time . " Order by " . $column . "T Desc));";
     }
-echo 'Test 9';
 // echo $sql;
 
 
