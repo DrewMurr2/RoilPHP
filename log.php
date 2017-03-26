@@ -34,7 +34,7 @@ $stmt = sqlsrv_query( $conn, $sql);
 if( $stmt === false ) {
      echo "<li><a>Nope</a></li>";
 }else{
-    echo "{data:[";
+    echo '{"data":[';
     $firstTime = true;
     while($obj = sqlsrv_fetch_object( $stmt)){
 //$json = json_encode($obj);
