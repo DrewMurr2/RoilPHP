@@ -37,23 +37,19 @@ if( $stmt === false ) {
     echo "{data:[";
     $firstTime = true;
     while($obj = sqlsrv_fetch_object( $stmt)){
-//$json = json_encode($obj);
-//echo $json;
-
 
 foreach ($obj as $name => $value) {
       if($firstTime){
 echo $value;
+  $firstTime = false;
+
       }else{
   echo ", $value";
-  $firstTime = false;
       };
     
   };
 echo "]}";
-     // echo "<li><a>";
-     // echo $obj->TABLE_NAME;
-     // echo "</a></li>";
+
     }
 };
 
