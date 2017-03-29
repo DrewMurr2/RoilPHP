@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 $table = $_REQUEST["t"];
 $column = $_REQUEST["c"];
 $time = $_REQUEST["tt"];
@@ -22,7 +23,6 @@ if($direction == 'd'){
     if($direction == 'z'){
   $sql = "Select * from ((" . $base . $asc . ") UNION (" . $base . $column . "T <= " . $time . " Order by " . $column . "T Desc));";
     }
-echo 'Test 9';
 // echo $sql;
 
 
@@ -34,7 +34,7 @@ $stmt = sqlsrv_query( $conn, $sql);
 if( $stmt === false ) {
      echo "<li><a>Nope</a></li>";
 }else{
-    echo "{data:[";
+    echo '{"data":[';
     $firstTime = true;
     while($obj = sqlsrv_fetch_object( $stmt)){
 
